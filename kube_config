@@ -1,0 +1,20 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: $PLUGIN_K8S_CERTIFICATE_AUTHORITY_DATA
+    server: $PLUGIN_K8S_SERVER 
+  name: $PLUGIN_K8S_CLUSTER_NAME 
+contexts:
+- context:
+    cluster: $PLUGIN_K8S_CLUSTER_NAME 
+    namespace: $PLUGIN_K8S_NAMESPACE 
+    user: $PLUGIN_K8S_USER 
+  name: $PLUGIN_K8S_CLUSTER_NAME 
+current-context: $PLUGIN_K8S_CLUSTER_NAME 
+kind: Config
+preferences: {}
+users:
+- name: $PLUGIN_K8S_USER 
+  user:
+    client-certificate-data: $PLUGIN_K8S_CLIENT_CERTIFICATE_DATA
+    client-key-data: $PLUGIN_K8S_CLIENT_KEY_DATA 
